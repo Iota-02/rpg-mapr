@@ -24,10 +24,10 @@ map "Kingdom of the Sun" {
         size: 60x60
         description: "Walled city protecting the Capital from invading forces."
 
-        object "Barracs" {
+        object "Barracks" {
             position: 30, 30
             type: "structure"
-            description: "Where the soldiers rest betweeen incoming waves of attackers."
+            description: "Where the soldiers rest between incoming waves of attackers."
         }
 
         npc "Guardsmen" {
@@ -45,7 +45,7 @@ map "Kingdom of the Sun" {
         enemy "Goblin_Gang" {
                 position: 10, 15
                 number: 7
-                description: "A gang of goblin thieves waiting in ambush for any merchnts passing by."
+                description: "A gang of goblin thieves waiting in ambush for any merchants passing by."
             }
     }
 
