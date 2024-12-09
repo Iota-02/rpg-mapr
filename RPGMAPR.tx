@@ -35,7 +35,7 @@ NPC:
 Enemy:
     'enemy' name=STRING '{'
         'position:' position=Coordinate
-        'number:' number=STRING
+        'number:' number=INT
         'description:' description=STRING
     '}';
 
