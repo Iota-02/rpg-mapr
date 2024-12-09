@@ -41,6 +41,12 @@ map "Kingdom of the Sun" {
         position: 800, 200
         size: 60x60
         description: "Walled city protecting the Capital from invading forces."
+    
+        enemy "Goblin_Gang" {
+                position: 10, 15
+                number: 7
+                description: "A gang of goblin thieves waiting in ambush for any merchnts passing by."
+            }
     }
 
     path "Mountain_Pass" {
@@ -48,5 +54,12 @@ map "Kingdom of the Sun" {
         to: The_Wall
         type: "cave"
         description: "A hidden walkway through the mountains between the Capital City and The Wall."
+    }
+
+    path "Forest_Road" {
+        from: Capital_City
+        to: The_Forest
+        type: "dirt road"
+        description: "A road well traveled from the Capital to the nearby forest."
     }
 }
