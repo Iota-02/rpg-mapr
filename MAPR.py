@@ -134,10 +134,8 @@ def draw_map(model):
 def main(debug=False):
     # Safely determine the directory of the script
     try:
-        # `__file__` works in normal script execution
         this_folder = dirname(__file__)
     except NameError:
-        # Fallback for environments like Jupyter Notebook or certain IDEs
         this_folder = "."
 
     # Load the metamodel from the grammar file
@@ -147,7 +145,7 @@ def main(debug=False):
     if debug:
         metamodel_export(map_mm, join(this_folder, 'RPGMAPR_meta.dot'))
 
-    # Load the map model from the test file
+    # Load the map model
     map_model = map_mm.model_from_file(join(this_folder, 'test.map'))
 
     # Export the model if debugging is enabled
