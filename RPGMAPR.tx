@@ -1,0 +1,51 @@
+Map:
+    'map' name=STRING '{'
+        'size:' size=Size
+        regions+=Region*
+        paths+=Path*
+    '}';
+
+Size:
+    width=INT 'x' height=INT;
+
+Region:
+    'region' name=STRING '{'
+        'position:' position=Coordinate
+        'size:' size=Size
+        'description:' description=STRING
+        objects+=Object*
+        npcs+=NPC*
+        enemies+=Enemy*
+    '}';
+
+Object:
+    'object' name=STRING '{'
+        'position:' position=Coordinate
+        'type:' type=STRING
+        'description:' description=STRING
+    '}';
+
+NPC:
+    'npc' name=STRING '{'
+        'position:' position=Coordinate
+        'role:' role=STRING
+        'description:' description=STRING
+    '}';
+
+Enemy:
+    'enemy' name=STRING '{'
+        'position:' position=Coordinate
+        'number:' number=STRING
+        'description:' description=STRING
+    '}';
+
+Path:
+    'path' name=STRING '{'
+        'from:' from_region=[Region]  
+        'to:' to_region=[Region]      
+        'type:' type=STRING
+        'description:' description=STRING
+    '}';
+
+Coordinate:
+    x=INT ',' y=INT;

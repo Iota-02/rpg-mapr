@@ -1,0 +1,52 @@
+map "Kingdom of the Sun" {
+    size: 1000x1000
+
+    region "Capital_City" {
+        position: 500, 500
+        size: 100x100
+        description: "Big and beautiful city."
+
+        object "Royal_Palace" {
+            position: 50, 50
+            type: "landmark"
+            description: "The palace of the kingdoms ruler's."
+        }
+
+        npc "Wise_King" {
+            position: 90, 90
+            role: "quest giver"
+            description: "Gives the final quest to save the kingdom from ruin."
+        }
+    }
+
+    region "The_Wall" {
+        position: 300, 300
+        size: 60x60
+        description: "Walled city protecting the Capital from invading forces."
+
+        object "Barracs" {
+            position: 30, 30
+            type: "structure"
+            description: "Where the soldiers rest betweeen incoming waves of attackers."
+        }
+
+        npc "Guardsmen" {
+            position: 10, 10
+            role: "Security"
+            description: "Stops enemies from infiltrating The Wall."
+        }
+    }
+
+    region "The_Forest" {
+        position: 800, 200
+        size: 60x60
+        description: "Walled city protecting the Capital from invading forces."
+    }
+
+    path "Mountain_Pass" {
+        from: Capital_City
+        to: The_Wall
+        type: "cave"
+        description: "A hidden walkway through the mountains between the Capital City and The Wall."
+    }
+}
