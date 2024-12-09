@@ -56,7 +56,7 @@ def draw_map(model):
             )
             ax.text(
                 region.position.x + obj.position.x,
-                region.position.y + obj.position.y + 1,
+                region.position.y + obj.position.y + model.size.height/100,
                 obj.name,
                 fontsize=8,
                 color=color,
@@ -74,7 +74,7 @@ def draw_map(model):
             )
             ax.text(
                 region.position.x + npc.position.x,
-                region.position.y + npc.position.y + 1,
+                region.position.y + npc.position.y + model.size.height/100,
                 npc.name,
                 fontsize=8,
                 color="red",
@@ -91,7 +91,7 @@ def draw_map(model):
             )
             ax.text(
                 region.position.x + enemy.position.x,
-                region.position.y + enemy.position.y + 1,
+                region.position.y + enemy.position.y + model.size.height/100,
                 f"{enemy.name} ({enemy.number})",
                 fontsize=8,
                 color="black",
@@ -145,7 +145,7 @@ def main(debug=False):
     if debug:
         metamodel_export(map_mm, join(this_folder, 'RPGMAPR_meta.dot'))
 
-    # Load the map model
+    # Load the map model 
     map_model = map_mm.model_from_file(join(this_folder, 'test.map'))
 
     # Export the model if debugging is enabled
