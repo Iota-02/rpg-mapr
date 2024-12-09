@@ -1,2 +1,3 @@
 # rpg-mapr
 CS420 Project
+This is my programming language rpgmapr, for my Advanced Programming Languages class. The language is a DSL meant to help Dungeon Masters and other tabletop game fans be able to easily and quickly do a mockup and descriptions of different maps they thought up for their campaign or game they are creating, where they can create the region they are making and add different areas, objects, enemies, npcs and paths. So far the program is fairly simple but I might get imput from various friends to try and expand on it as a hobby/side project. You can get a general understandiong on how the program works and is written from the test.map file(a sample program) and the RPGMAPR.tx file that contains the BNF.
