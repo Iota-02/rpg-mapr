@@ -1,7 +1,159 @@
-<!DOCTYPE html><!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]--><!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]--><!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]--><!--[if gt IE 8]><!--><html class=no-js><!--<![endif]--><head><meta charset=utf-8><title>ArnoldC</title><meta name=description content=""><meta name=viewport content="width=device-width"><link rel="shortcut icon" href=d8500ddf.favicon.ico><!-- Place favicon.ico and apple-touch-icon.png in the root directory --><link rel=stylesheet href=styles/1d7769e0.vendor.css><link rel=stylesheet href=styles/292afb59.main.css><link href='http://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'><link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'><body><!--[if lt IE 10]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]--><div class=container><h1>RPGMAPR</h1><p class="lead slogan">A programming language made to ease the creation and documentation of Tabletop RPG maps</p><div class=buttons><a href=https://github.com/Iota-02/rpg-mapr type=button class="btn btn-lg btn-danger">More on Github</a> </h3><div class=left><strong>hello.arnoldc</strong></div><pre>IT'S SHOWTIME
-TALK TO THE HAND <span class=str>"hello world"</span>
-YOU HAVE BEEN TERMINATED</pre><pre>java -jar ArnoldC.jar hello.arnoldc
-java hello</pre><h4><hr><h3 class=subl>Now with Sublime support</h3><img src=images/d41d8cd9.ArnoldCSublime.png class=img-thumbnail><div class=sublime-instructions><div class="row-fluid left"><div class="col-lg-8 left"><ol><h4><li>Download the markup</li></h4><h4><li>Linux folder</li></h4><span class=folder>~/.config/sublime-text-v/Packages/ArnoldC</span><br><h4>Windows folder<br></h4><span class=folder>%APPDATA%\Sublime Text v\Packages\ArnoldC</span><br><h4>Mac folder<br></h4><span class=folder>~/Library/Application Support/Sublime Text 3/Packages/ArnoldC</span><li><h4><a class=meanwhile href="https://www.youtube.com/watch?v=pDxn0Xfqkgw">???</a></h4></li></ol></div><div class="col-lg-4 left tm"><a class="btn btn-primary" href=arnoldc.tmLanguage>Download<br><small>arnoldc.tmLanguage</small></a></div></div></div>
-<div class=footer><div class=pull-left><p style="margin: 10.5px 0px 0px 5px"> by <a href="https://twitter.com/lhartikk"> @lhartikk</a></p></div><blockquote class=pull-right><p>GET DOWN!</p><footer>Arnold Schwarzenegger</footer></blockquote></div></div></div><script src=scripts/a92a213a.vendor.js></script><script src=scripts/6aada3b6.main.js></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>RPGMAPR Website</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Style the body */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+/* Header/logo Title */
+.header {
+  padding: 80px;
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+}
+
+/* Increase the font size of the heading */
+.header h1 {
+  font-size: 40px;
+}
+
+/* Style the top navigation bar */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+/* Right-aligned link */
+.navbar a.right {
+  float: right;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Column container */
+.row {  
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+  -ms-flex: 30%; /* IE10 */
+  flex: 30%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+/* Main column */
+.main {   
+  -ms-flex: 70%; /* IE10 */
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+}
+
+/* Fake image, just for this example */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row {   
+    flex-direction: column;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>RPGMAPR</h1>
+  <p>A website created by me.</p>
+</div>
+
+<div class="navbar">
+  <a href="#">Link</a>
+  <a href="#">Link</a>
+  <a href="#">Link</a>
+  <a href="#" class="right">Link</a>
+</div>
+
+<div class="row">
+  <div class="side">
+    <h2>About Me</h2>
+    <h5>Photo of me:</h5>
+    <div class="fakeimg" style="height:200px;">Image</div>
+    <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+    <h3>More Text</h3>
+    <p>Lorem ipsum dolor sit ame.</p>
+    <div class="fakeimg" style="height:60px;">Image</div><br>
+    <div class="fakeimg" style="height:60px;">Image</div><br>
+    <div class="fakeimg" style="height:60px;">Image</div>
+  </div>
+  <div class="main">
+    <h2>TITLE HEADING</h2>
+    <h5>Title description, Dec 7, 2017</h5>
+    <div class="fakeimg" style="height:200px;">Image</div>
+    <p>Some text..</p>
+    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+    <br>
+    <h2>TITLE HEADING</h2>
+    <h5>Title description, Sep 2, 2017</h5>
+    <div class="fakeimg" style="height:200px;">Image</div>
+    <p>Some text..</p>
+    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+  </div>
+</div>
+
+<div class="footer">
+  <h2>Footer</h2>
+</div>
+
+</body>
+</html>
