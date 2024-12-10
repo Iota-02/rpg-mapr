@@ -25,7 +25,9 @@ def draw_map(model):
     }
     enemy_marker = "x"
 
+    # Iterate over regions
     for region in model.regions:
+        # Draw the region rectangle
         region_rect = patches.Rectangle(
             (region.position.x, region.position.y),
             region.size.width,
@@ -36,9 +38,11 @@ def draw_map(model):
             alpha=0.5
         )
         ax.add_patch(region_rect)
+
+        # Display region name
         ax.text(
             region.position.x + region.size.width / 2,
-            region.position.y + region.size.height + model.size.height/100,
+            region.position.y + region.size.height + model.size.height / 100,
             region.name,
             color='blue',
             ha='center',
@@ -46,6 +50,10 @@ def draw_map(model):
             fontsize=10
         )
 
+        # Print region description
+        print(f"Region '{region.name}': {region.description}")
+
+        # Draw objects
         for obj in region.objects:
             color = object_colors.get(obj.type, "gray")
             ax.scatter(
@@ -56,13 +64,17 @@ def draw_map(model):
             )
             ax.text(
                 region.position.x + obj.position.x,
-                region.position.y + obj.position.y + model.size.height/100,
+                region.position.y + obj.position.y + model.size.height / 100,
                 obj.name,
                 fontsize=8,
                 color=color,
                 ha='center'
             )
 
+            # Print object description
+            print(f"  Object '{obj.name}' ({obj.type}): {obj.description}")
+
+        # Draw NPCs
         for npc in region.npcs:
             marker = npc_markers.get(npc.role, "o")
             ax.scatter(
@@ -74,13 +86,17 @@ def draw_map(model):
             )
             ax.text(
                 region.position.x + npc.position.x,
-                region.position.y + npc.position.y + model.size.height/100,
+                region.position.y + npc.position.y + model.size.height / 100,
                 npc.name,
                 fontsize=8,
                 color="red",
                 ha='center'
             )
 
+            # Print NPC description
+            print(f"  NPC '{npc.name}' ({npc.role}): {npc.description}")
+
+        # Draw enemies
         for enemy in region.enemies:
             ax.scatter(
                 region.position.x + enemy.position.x,
@@ -91,13 +107,17 @@ def draw_map(model):
             )
             ax.text(
                 region.position.x + enemy.position.x,
-                region.position.y + enemy.position.y + model.size.height/100,
+                region.position.y + enemy.position.y + model.size.height / 100,
                 f"{enemy.name} ({enemy.number})",
                 fontsize=8,
                 color="black",
                 ha='center'
             )
 
+            # Print enemy description
+            print(f"  Enemy '{enemy.name}' (x{enemy.number}): {enemy.description}")
+
+    # Iterate over paths
     for path in model.paths:
         start_region = next(r for r in model.regions if r.name == path.from_region.name)
         end_region = next(r for r in model.regions if r.name == path.to_region.name)
@@ -111,6 +131,7 @@ def draw_map(model):
             end_region.position.y + end_region.size.height / 2
         )
 
+        # Draw path
         ax.plot(
             [start_center[0], end_center[0]],
             [start_center[1], end_center[1]],
@@ -126,6 +147,9 @@ def draw_map(model):
             color='brown',
             ha='center'
         )
+
+        # Print path description
+        print(f"Path '{path.name}' from '{path.from_region.name}' to '{path.to_region.name}': {path.description}")
 
     ax.legend(loc="upper right")
     plt.grid(visible=True, which='both', color='gray', linestyle='--', linewidth=0.5)
