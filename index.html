@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>RPGMAPR Website</title>
+<title>Page Title</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -94,14 +94,13 @@ body {
   background: #ddd;
 }
 
-/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 700px) {
   .row {   
     flex-direction: column;
   }
 }
 
-/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+
 @media screen and (max-width: 400px) {
   .navbar a {
     float: none;
@@ -114,46 +113,131 @@ body {
 
 <div class="header">
   <h1>RPGMAPR</h1>
-  <p>A website created by me.</p>
+  <p>Agustin Munoz</p>
 </div>
 
 <div class="navbar">
-  <a href="#">Link</a>
-  <a href="#">Link</a>
-  <a href="#">Link</a>
-  <a href="#" class="right">Link</a>
+  <a href="https://github.com/Iota-02/rpg-mapr" class="right">GitHub Link</a>
 </div>
 
 <div class="row">
-  <div class="side">
-    <h2>About Me</h2>
-    <h5>Photo of me:</h5>
-    <div class="fakeimg" style="height:200px;">Image</div>
-    <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
-    <h3>More Text</h3>
-    <p>Lorem ipsum dolor sit ame.</p>
-    <div class="fakeimg" style="height:60px;">Image</div><br>
-    <div class="fakeimg" style="height:60px;">Image</div><br>
-    <div class="fakeimg" style="height:60px;">Image</div>
-  </div>
   <div class="main">
-    <h2>TITLE HEADING</h2>
-    <h5>Title description, Dec 7, 2017</h5>
-    <div class="fakeimg" style="height:200px;">Image</div>
-    <p>Some text..</p>
-    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-    <br>
-    <h2>TITLE HEADING</h2>
-    <h5>Title description, Sep 2, 2017</h5>
-    <div class="fakeimg" style="height:200px;">Image</div>
-    <p>Some text..</p>
-    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+    <h2>For the TTRPG Lovers</h2>
+    <p>Turn this:</p>
+ 		<pre>map "Kingdom of the Sun" {
+    size: 1000x1000
+
+    region "Capital_City" {
+        position: 500, 500
+        size: 100x100
+        description: "Big and beautiful city."
+
+        object "Royal_Palace" {
+            position: 50, 50
+            type: "structure"
+            description: "The palace of the kingdoms ruler's."
+        }
+
+        npc "Wise_King" {
+            position: 90, 90
+            role: "quest giver"
+            description: "Gives the final quest to save the kingdom from ruin."
+        }
+    }
+
+    region "The_Wall" {
+        position: 300, 300
+        size: 60x60
+        description: "Walled city protecting the Capital from invading forces."
+
+        object "Barracks" {
+            position: 30, 30
+            type: "structure"
+            description: "Where the soldiers rest between incoming waves of attackers."
+        }
+
+        npc "Guardsmen" {
+            position: 10, 10
+            role: "information"
+            description: "Knows who has entered the region recently."
+        }
+        
+    }
+
+    path "Mountain_Pass" {
+        from: Capital_City
+        to: The_Wall
+        type: "cave"
+        description: "A hidden walkway through the mountains between the Capital City and The Wall."
+    }
+
+    region "The_Forest" {
+        position: 800, 200
+        size: 80x400
+        description: "Walled city protecting the Capital from invading forces."
+    
+        enemy "Goblin_Gang" {
+                position: 10, 220
+                number: 7
+                description: "A gang of goblin thieves waiting in ambush for any merchants passing by."
+            }
+    }
+
+    path "Forest_Road" {
+        from: Capital_City
+        to: The_Forest
+        type: "dirt road"
+        description: "A road well traveled from the Capital to the nearby forest."
+    }
+
+    region "Ocean" {
+        position: 0, 800
+        size: 400x200
+        description: "Northeast border of the continent."
+
+        enemy "Kraken" {
+                position: 200, 100
+                number: 1
+                description: "Fearsome sea leviathan."
+            }
+    }
+
+    region "Ocean" {
+        position: 0, 600
+        size: 200x200
+        description: "Northeast border of the continent."
+
+        object "Pirate_Ship" {
+            position: 200, 100
+            type: "structure"
+            description: "Ship of the fearsome Black Beard."
+        }
+    }
+
+    region "Port_Town" {
+        position: 300, 750
+        size: 50x50
+        description: "Port town with a big trading industry."
+
+        npc "Potion_Seller" {
+            position: 45, 0
+            role: "shopkeeper"
+            description: "Sells the strongest and finest potions in the kingdom."
+        }
+    }
+
+    path "Riverway" {
+        from: Capital_City
+        to: Port_Town
+        type: "river"
+        description: "a river that leads from Port Town down to Capital City."
+    }
+}</pre>
+    <p>Into this:</p>
+    <img src=images/Capture.png class=img-thumbnail>
   </div>
 </div>
 
-<div class="footer">
-  <h2>Footer</h2>
-</div>
 
 </body>
 </html>
