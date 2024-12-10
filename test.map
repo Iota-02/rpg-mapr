@@ -8,7 +8,7 @@ map "Kingdom of the Sun" {
 
         object "Royal_Palace" {
             position: 50, 50
-            type: "landmark"
+            type: "structure"
             description: "The palace of the kingdoms ruler's."
         }
 
@@ -32,21 +32,10 @@ map "Kingdom of the Sun" {
 
         npc "Guardsmen" {
             position: 10, 10
-            role: "Security"
-            description: "Stops enemies from infiltrating The Wall."
+            role: "information"
+            description: "Knows who has entered the region recently."
         }
-    }
-
-    region "The_Forest" {
-        position: 800, 200
-        size: 60x60
-        description: "Walled city protecting the Capital from invading forces."
-    
-        enemy "Goblin_Gang" {
-                position: 10, 15
-                number: 7
-                description: "A gang of goblin thieves waiting in ambush for any merchants passing by."
-            }
+        
     }
 
     path "Mountain_Pass" {
@@ -56,10 +45,65 @@ map "Kingdom of the Sun" {
         description: "A hidden walkway through the mountains between the Capital City and The Wall."
     }
 
+    region "The_Forest" {
+        position: 800, 200
+        size: 80x400
+        description: "Walled city protecting the Capital from invading forces."
+    
+        enemy "Goblin_Gang" {
+                position: 10, 220
+                number: 7
+                description: "A gang of goblin thieves waiting in ambush for any merchants passing by."
+            }
+    }
+
     path "Forest_Road" {
         from: Capital_City
         to: The_Forest
         type: "dirt road"
         description: "A road well traveled from the Capital to the nearby forest."
+    }
+
+    region "Ocean" {
+        position: 0, 800
+        size: 400x200
+        description: "Northeast border of the continent."
+
+        enemy "Kraken" {
+                position: 200, 100
+                number: 1
+                description: "Fearsome sea leviathan."
+            }
+    }
+
+    region "Ocean" {
+        position: 0, 600
+        size: 200x200
+        description: "Northeast border of the continent."
+
+        object "Pirate_Ship" {
+            position: 200, 100
+            type: "structure"
+            description: "Ship of the fearsome Black Beard."
+        }
+    }
+
+    region "Port_Town" {
+        position: 300, 750
+        size: 50x50
+        description: "Port town with a big trading industry."
+
+        npc "Potion_Seller" {
+            position: 45, 0
+            role: "shopkeeper"
+            description: "Sells the strongest and finest potions in the kingdom."
+        }
+    }
+
+    path "Riverway" {
+        from: Capital_City
+        to: Port_Town
+        type: "river"
+        description: "a river that leads from Port Town down to Capital City."
     }
 }
