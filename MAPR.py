@@ -14,7 +14,7 @@ def draw_map(model):
     ax.set_ylabel("Y Coordinate")
 
     object_colors = {
-        "landmark": "green",
+        "structure": "green",
         "object": "darkred",
         "structure": "gold",
     }
@@ -169,8 +169,11 @@ def main(debug=False):
     if debug:
         metamodel_export(map_mm, join(this_folder, 'RPGMAPR_meta.dot'))
 
+    #Ask user to input the map to be modeled
+    filename = input("Map to be displayed: ")
+    
     # Load the map model 
-    map_model = map_mm.model_from_file(join(this_folder, 'test.map'))
+    map_model = map_mm.model_from_file(join(this_folder, filename))
 
     # Export the model if debugging is enabled
     if debug:
