@@ -1,8 +1,7 @@
 Map:
     'map' name=STRING '{'
         'size:' size=Size
-        regions+=Region*
-        paths+=Path*
+        (regions+=Region | paths+=Path)*
     '}';
 
 Size:
@@ -13,9 +12,7 @@ Region:
         'position:' position=Coordinate
         'size:' size=Size
         'description:' description=STRING
-        objects+=Object*
-        npcs+=NPC*
-        enemies+=Enemy*
+        (objects+=Object | npcs+=NPC | enemies+=Enemy)*
     '}';
 
 Object:
