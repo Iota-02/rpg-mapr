@@ -6,3 +6,4 @@ Objects, npcs and enemies outside of regions
 More flexible area implementation for regions
 Names that can have spaces
 More map interactivity?
+Be able to cooment inside the .map files having single and multi line comments
