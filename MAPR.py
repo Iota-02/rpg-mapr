@@ -13,20 +13,17 @@ def draw_map(model):
     ax.set_xlabel("X Coordinate")
     ax.set_ylabel("Y Coordinate")
 
-    object_colors = {
-        "structure": "green",
-        "object": "darkred",
-        "structure": "gold",
-    }
-    npc_markers = {
-        "quest giver": "o",
-        "information": "D",
-        "shopkeeper": "s",
-    }
-    enemy_marker = "x"
+    # Default colors
+    default_region_color = "lightblue"
+    default_object_color = "gray"
+    default_npc_color = "red"
+    default_enemy_color = "black"
 
     # Iterate over regions
     for region in model.regions:
+        # Use region color if specified, otherwise default
+        region_color = region.color if hasattr(region, 'color') and region.color else default_region_color
+
         # Draw the region rectangle
         region_rect = patches.Rectangle(
             (region.position.x, region.position.y),
@@ -34,7 +31,7 @@ def draw_map(model):
             region.size.height,
             linewidth=1,
             edgecolor='blue',
-            facecolor='lightblue',
+            facecolor=region_color,
             alpha=0.5
         )
         ax.add_patch(region_rect)
@@ -55,11 +52,11 @@ def draw_map(model):
 
         # Draw objects
         for obj in region.objects:
-            color = object_colors.get(obj.type, "gray")
+            obj_color = obj.color if hasattr(obj, 'color') and obj.color else default_object_color
             ax.scatter(
                 region.position.x + obj.position.x,
                 region.position.y + obj.position.y,
-                color=color,
+                color=obj_color,
                 label=f"Object ({obj.type})" if f"Object ({obj.type})" not in ax.get_legend_handles_labels()[1] else ""
             )
             ax.text(
@@ -67,7 +64,7 @@ def draw_map(model):
                 region.position.y + obj.position.y + model.size.height / 100,
                 obj.name,
                 fontsize=8,
-                color=color,
+                color=obj_color,
                 ha='center'
             )
 
@@ -76,12 +73,12 @@ def draw_map(model):
 
         # Draw NPCs
         for npc in region.npcs:
-            marker = npc_markers.get(npc.role, "o")
+            npc_color = npc.color if hasattr(npc, 'color') and npc.color else default_npc_color
             ax.scatter(
                 region.position.x + npc.position.x,
                 region.position.y + npc.position.y,
-                color="red",
-                marker=marker,
+                color=npc_color,
+                marker='o',
                 label=f"NPC ({npc.role})" if f"NPC ({npc.role})" not in ax.get_legend_handles_labels()[1] else ""
             )
             ax.text(
@@ -89,7 +86,7 @@ def draw_map(model):
                 region.position.y + npc.position.y + model.size.height / 100,
                 npc.name,
                 fontsize=8,
-                color="red",
+                color=npc_color,
                 ha='center'
             )
 
@@ -98,11 +95,12 @@ def draw_map(model):
 
         # Draw enemies
         for enemy in region.enemies:
+            enemy_color = enemy.color if hasattr(enemy, 'color') and enemy.color else default_enemy_color
             ax.scatter(
                 region.position.x + enemy.position.x,
                 region.position.y + enemy.position.y,
-                color="black",
-                marker=enemy_marker,
+                color=enemy_color,
+                marker='x',
                 label="Enemy" if "Enemy" not in ax.get_legend_handles_labels()[1] else ""
             )
             ax.text(
@@ -110,7 +108,7 @@ def draw_map(model):
                 region.position.y + enemy.position.y + model.size.height / 100,
                 f"{enemy.name} ({enemy.number})",
                 fontsize=8,
-                color="black",
+                color=enemy_color,
                 ha='center'
             )
 
@@ -169,9 +167,9 @@ def main(debug=False):
     if debug:
         metamodel_export(map_mm, join(this_folder, 'RPGMAPR_meta.dot'))
 
-    #Ask user to input the map to be modeled
+    # Ask user to input the map to be modeled
     filename = input("Map to be displayed: ")
-    
+
     # Load the map model 
     map_model = map_mm.model_from_file(join(this_folder, filename))
 
@@ -181,7 +179,6 @@ def main(debug=False):
 
     # Draw the map using the parsed model
     draw_map(map_model)
-
 
 if __name__ == "__main__":
     main(debug=True)
