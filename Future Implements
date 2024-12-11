@@ -1,0 +1,8 @@
+Things to implement:
+Different shapes for the regions
+Optional description and type stuff for objects, npcs and enemies and paths
+Structure class
+Objects, npcs and enemies outside of regions
+More flexible area implementation for regions
+Names that can have spaces
+More map interactivity?
