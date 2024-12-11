@@ -12,6 +12,7 @@ Region:
         'position:' position=Coordinate
         'size:' size=Size
         'description:' description=STRING
+        ('color:' color=STRING)?
         (objects+=Object | npcs+=NPC | enemies+=Enemy)*
     '}';
 
@@ -20,6 +21,7 @@ Object:
         'position:' position=Coordinate
         'type:' type=STRING
         'description:' description=STRING
+        ('color:' color=STRING)?
     '}';
 
 NPC:
@@ -27,6 +29,7 @@ NPC:
         'position:' position=Coordinate
         'role:' role=STRING
         'description:' description=STRING
+        ('color:' color=STRING)?
     '}';
 
 Enemy:
@@ -34,6 +37,7 @@ Enemy:
         'position:' position=Coordinate
         'number:' number=INT
         'description:' description=STRING
+        ('color:' color=STRING)?
     '}';
 
 Path:
