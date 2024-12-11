@@ -5,17 +5,20 @@ map "Kingdom of the Sun" {
         position: 500, 500
         size: 100x100
         description: "Big and beautiful city."
+        color: "lightgray"
 
         object "Royal_Palace" {
             position: 50, 50
             type: "structure"
             description: "The palace of the kingdoms ruler's."
+            color: "gold"
         }
 
         npc "Wise_King" {
             position: 90, 90
             role: "quest giver"
             description: "Gives the final quest to save the kingdom from ruin."
+            color: "green"
         }
     }
 
@@ -23,17 +26,20 @@ map "Kingdom of the Sun" {
         position: 300, 300
         size: 60x60
         description: "Walled city protecting the Capital from invading forces."
+        color: "lightgrey"
 
         object "Barracks" {
             position: 30, 30
             type: "structure"
             description: "Where the soldiers rest between incoming waves of attackers."
+            color: "blue"
         }
 
         npc "Guardsmen" {
             position: 10, 10
             role: "information"
             description: "Knows who has entered the region recently."
+            color: "blue"
         }
         
     }
@@ -49,11 +55,13 @@ map "Kingdom of the Sun" {
         position: 800, 200
         size: 80x400
         description: "Walled city protecting the Capital from invading forces."
-    
+        color: "green"
+
         enemy "Goblin_Gang" {
                 position: 10, 220
                 number: 7
                 description: "A gang of goblin thieves waiting in ambush for any merchants passing by."
+                color: "lightblue"
             }
     }
 
@@ -73,6 +81,7 @@ map "Kingdom of the Sun" {
                 position: 200, 100
                 number: 1
                 description: "Fearsome sea leviathan."
+                color: "red"
             }
     }
 
@@ -85,6 +94,7 @@ map "Kingdom of the Sun" {
             position: 200, 100
             type: "structure"
             description: "Ship of the fearsome Black Beard."
+            color: "brown"
         }
     }
 
@@ -92,12 +102,28 @@ map "Kingdom of the Sun" {
         position: 300, 750
         size: 50x50
         description: "Port town with a big trading industry."
+        color: "lightgrey"
 
         npc "Potion_Seller" {
             position: 45, 0
             role: "shopkeeper"
             description: "Sells the strongest and finest potions in the kingdom."
+            color: "green"
         }
+    }
+
+    region "Scheherazade_Desert" {
+        position: 0, 0
+        size: 200x400
+        description: "Scorching hot desert  where nomadic tribes roam."
+        color: "tan"
+    }
+
+    region "Nomad_Outpost" {
+        position: 75, 175
+        size: 50x50
+        description: "Curtrent outpost of the Lazotep tribe."
+        color: "yellow"
     }
 
     path "Riverway" {
